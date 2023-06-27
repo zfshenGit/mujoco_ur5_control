@@ -1,0 +1,9 @@
+1.编译产生ikfastpy.so文件
+	将ikfastpy里的ikfast61.cpp替换为/home/amax/Desktop/shenzhifei_files/电脑文件/MuJoCo_impedance_control/MuJoCo_impedance_control/6.IKFastPy逆运动学/ikfast里的ikfast61.cpp
+	
+	conda activate mujoco210	
+
+	ikfastpy路径下python setup.py build_ext --inplace
+编译生成ikfastpy.cpython-38-x86_64-linux-gnu.so文件
+
+2.将ikfastpy.cpython-38-x86_64-linux-gnu.so重命名为ikfastpy.so,和ikfastpy.pyx一起复制到.py文件同名路径下,即可import ikfastpy成功
