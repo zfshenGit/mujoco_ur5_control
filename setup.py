@@ -17,6 +17,9 @@ setup(
         'mujoco_py==2.1.2.14',
         'simple_pid',
         'matplotlib==3.3.4',
+		'termcolor',
+		'pyqtgraph',
+		'PyQt5',
         'numpy'
     ],
     description="Teaching tools for introducing people to mujoco ur5 vontrol.",

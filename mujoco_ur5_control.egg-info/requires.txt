@@ -1,4 +1,6 @@
 mujoco_py==2.1.2.14
 simple_pid
 matplotlib==3.3.4
+termcolor
+pyqtgraph
 numpy
