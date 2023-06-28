@@ -27,7 +27,7 @@ mkdir ~/.mujoco
 sudo gedit ~/.bashrc
 ```
 
-添加环境变量,其中user_name需要改称你的用户名
+添加环境变量,其中user_name需要改成你的用户名
 ```commandline
 export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
 ```
@@ -54,7 +54,7 @@ sh Anaconda3-2023.03-1-Linux-x86_64.sh进行安装
 
 #### 2.2 环境变量设置
 
-添加环境变量，其中user_name需要改称你的用户名
+添加环境变量，其中user_name需要改成你的用户名
 ```commandline
 export PATH=/home/user_name/anaconda3/bin:$PATH
 ```
