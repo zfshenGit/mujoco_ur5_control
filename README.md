@@ -86,6 +86,9 @@ pip install mujoco_py
 pip install simple_pid
 pip install matplotlib
 pip install termcolor
+pip install pyqtgraph
+pip install PyQt5
+pip install numpy
 # mujoco_py通过清华源安装命令如下
 pip install mujoco_py -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
