@@ -72,8 +72,20 @@ conda create -n mujoco_ur5 python=3.6
 conda activate mujoco_ur5
 ```
 
-#### 2.4 安装mujoco_py
+#### 2.4 安装mujoco_py和其他依赖
+一键安装依赖
+
+```commandline
+pip install -e .
+```
+
+或者单独安装依赖
 
 ```commandline
 pip install mujoco_py
+pip install simple_pid
+pip install matplotlib
+# mujoco_py通过清华源安装命令如下
+pip install mujoco_py -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
