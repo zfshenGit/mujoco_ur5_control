@@ -37,6 +37,7 @@ export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
 ```
 
+更新环境变量
 ```commandline
 source ~/.bashrc
 ```
@@ -56,6 +57,7 @@ sh Anaconda3-2023.03-1-Linux-x86_64.sh进行安装
 export PATH=/home/user_name/anaconda3/bin:$PATH
 ```
 
+更新环境变量
 ```commandline
 source ~/.bashrc
 ```
