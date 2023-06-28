@@ -35,6 +35,8 @@ export LD_LIBRARY_PATH=/home/user_name/.mujoco/mujoco210/bin
 添加环境变量
 ```commandline
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/nvidia
+export PATH="$LD_LIBRARY_PATH:$PATH"
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
 ```
 
 更新环境变量
