@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 mujoco_ur5_control.egg-info/PKG-INFO
@@ -5,3 +6,5 @@ mujoco_ur5_control.egg-info/SOURCES.txt
 mujoco_ur5_control.egg-info/dependency_links.txt
 mujoco_ur5_control.egg-info/requires.txt
 mujoco_ur5_control.egg-info/top_level.txt
+test/test_pyqt.py
+test/test_pyqt_v1.py
