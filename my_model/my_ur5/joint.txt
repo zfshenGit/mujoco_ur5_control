@@ -1,0 +1,7 @@
+joint value 0 :0.343903
+joint value 1 :-1.79413
+joint value 2 :-2.079
+joint value 3 :-1.63227
+joint value 4 :-1.87035
+joint value 5 :-1.03724
+
