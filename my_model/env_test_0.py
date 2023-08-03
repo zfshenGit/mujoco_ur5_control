@@ -29,17 +29,17 @@ if __name__ == '__main__':
     body_id = sim.model.body_name2id('wrist_3_link')
 
     while 1:
-        desired_pos[0] = home_pos[0] 
-        desired_pos[1] = home_pos[1] 
-        # desired_pos[0] = home_pos[0] + 0.1 * math.cos(steps / 180 * np.pi)
-        # desired_pos[1] = home_pos[1] + 0.1 * math.sin(steps / 180 * np.pi)
+        # desired_pos[0] = home_pos[0] 
+        # desired_pos[1] = home_pos[1] 
+        desired_pos[0] = home_pos[0] + 0.1 * math.cos(steps / 180 * np.pi)
+        desired_pos[1] = home_pos[1] + 0.1 * math.sin(steps / 180 * np.pi)
         # print("home_pos[0]:", home_pos[0])
         # print("pos[1]:", pos[1])
         # print("desired_pos[0]:", desired_pos[0])
         # print("desired_pos[1]:", desired_pos[1])
         tau = torque_cartesian(Rbt, sim, kc, dc, 'ee', desired_pos, desired_ori)
         if 1000 <= steps < 1100:
-            sim.data.xfrc_applied[body_id][0] = 30
+            sim.data.xfrc_applied[body_id][0] = 0
         else:
             sim.data.xfrc_applied[body_id][0] = 0
         sim.data.ctrl[:] = tau
