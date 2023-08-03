@@ -45,10 +45,10 @@ if __name__ == '__main__':
         # sim.data.ctrl[:] = tau
         # qpos = np.array([0.343903, -1.79413, -2.079, -1.63227, -1.87035, -1.03724])
         # qvel = np.zeros_like(qpos)
+        sim.data.ctrl[:] = sim.data.qfrc_bias[:]
         qvel = np.array([0.01, 0.0, 0.0, 0.0, 0.0, 0.0])
         sim.data.qvel[:] = qvel
         # print(qvel)
-        sim.data.ctrl[:] = sim.data.qfrc_bias[:]
         sim.step()
         steps += 1
         viewer.render()

@@ -1,6 +1,6 @@
 import gym
 
-env = gym.make('peg_in_hole:peg-in-hole-v0')
+env = gym.make('car2D:car2D-v0')
 env.reset()
 
 for i in range(10000):
