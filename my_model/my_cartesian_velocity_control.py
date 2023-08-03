@@ -10,7 +10,7 @@ viewer = mp.MjViewer(sim)
 qpos = np.array([0.343903, -1.79413, -2.079, -1.63227, -1.87035, -1.03724])
 qvel = np.zeros_like(qpos)
 sim.data.qpos[:] = qpos
-sim.data.qvel[:] = qvel
+# sim.data.qvel[:] = qvel
 sim.forward()
 
 # 控制循环
@@ -28,7 +28,7 @@ while True:
     joint_vel = np.dot(np.linalg.pinv(jacobian), target_vel)
 
     # 设置关节速度
-    sim.data.qvel[:] = joint_vel
+    sim.data.qvel[:] = qvel
 
     # 执行一步仿真
     sim.step()

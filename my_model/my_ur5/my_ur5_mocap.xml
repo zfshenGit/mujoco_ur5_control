@@ -57,6 +57,7 @@
                                 <joint name="wrist_3_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.14159 3.14159" />
                                 <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.7 0.7 0.7 1" mesh="wrist3" />
                                 <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="wrist3" />
+                                <site name="ee" pos="0 0 0" rgba="1 0 0 1" size="0.01" type="sphere"/>
                                 <body name="ee_link" pos="0 0.0823 0">
                                     <inertial pos="-0.01 0 0" mass="0.001" diaginertia="1.66667e-08 1.66667e-08 1.66667e-08" />
                                     <geom size="0.005 0.005 0.005" pos="-0.005 0 0" type="box" />
