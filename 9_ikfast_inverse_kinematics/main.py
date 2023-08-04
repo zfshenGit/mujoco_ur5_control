@@ -42,6 +42,8 @@ if __name__ == '__main__':
     sim.forward()
     pos, ori = RbtKdl.fk()
     pos, ori = np.array(pos), np.array(ori)
+    print('pos:', pos)
+    print('ori:', ori)
     init = [-3.1, -1.5, 1.6, -1.6, -1.6, 0]
     print(ik(RbtKdl, init, pos, ori))
 
