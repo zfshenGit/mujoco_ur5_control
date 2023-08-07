@@ -3,6 +3,7 @@ import numpy as np
 import ikfastpy
 import utils
 from scipy.spatial.transform import Rotation as R
+import time
 
 def get_jacobian():
     jacobian_pos = sim.data.get_body_jacp('ee_link').reshape(3, 6)
@@ -116,7 +117,11 @@ if __name__ == '__main__':
     
     pos = np.array([-0.46289909,-0.04963134, 0.1737693])
     ori = np.array([[ -0.30363734, -0.5419815, -0.78362007], [-0.62578972, -0.50673891, 0.59296112], [-0.71846474, 0.67042653, -0.1853016]])
-    print('joint_value:', inverse_kinematics(init, pos, ori))
+    start = time.time()
+    inverse = inverse_kinematics(init, pos, ori) 
+    end = time.time()
+    print('inverse pos:', inverse)
+    print('cost time:', end - start)
 
     print('cartesian_velocity_control start!')
     target_vel = np.array([0.0, 0.0, 0.0, 0.0, 0.1, 0.0])
