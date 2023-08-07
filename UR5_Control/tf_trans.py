@@ -37,7 +37,25 @@ euler = quat2euler(ori)
 print('---------------------------')
 print('euler zyz:', euler)
 
+# base_link2world
 inverse_pos, inverse_ori = inverse_pose(pos, ori)
 print('---------------------------')
 print('inverse_pose:', inverse_pos)
 print('inverse_ori:', inverse_ori)
+
+# world下末端点坐标
+init_pos = np.array([-0.11686899, 0.29200483, 1.27060058])
+init_ori = [
+    [0.97294776, 0.05027519, 0.22548849],
+    [-0.22688896, 0.02407391, 0.97362305],
+    [0.0435207, -0.99844522, 0.03482954]
+]
+
+trans = r.from_matrix(init_ori)
+trans = r.as_matrix(trans)
+
+# init_pos, init_ori转换到base_link
+trans_pos = np.dot(inverse_ori, init_pos) + inverse_pos
+trans_ori = np.dot(inverse_ori, init_ori)
+print('trans_pos:', trans_pos)
+print('trans_ori', trans_ori)

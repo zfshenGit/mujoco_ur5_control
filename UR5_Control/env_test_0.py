@@ -107,16 +107,15 @@ if __name__ == '__main__':
     joint_position_init(joint_value)
 
     print('forward kenematic!')
-    pos, ori = forward_kinematics('wrist_3_link')
+    pos, ori = forward_kinematics('ee_link')
     print('pos:', pos)
     print('ori:', ori)
 
     print('inverse kenematic!')
     joint_value_1 = joint_value.copy()
-    # pos, ori = np.array(pos), np.array(ori)
-    # joint_value_1 = inverse_kinematics(RbtKdl, joint_value, pos, ori)
-    pos = np.array([-0.46950099, -0.12878354, 0.51674152])
-    ori = np.array([[ 0.97294776, 0.05027519, 0.22548849], [-0.22688896, 0.02407391, 0.97362305], [0.0435207, -0.99844522, 0.03482954]])
+    
+    pos = np.array([-0.46289909,-0.04963134, 0.1737693])
+    ori = np.array([[ -0.30363734, -0.5419815, -0.78362007], [-0.62578972, -0.50673891, 0.59296112], [-0.71846474, 0.67042653, -0.1853016]])
     print('joint_value:', inverse_kinematics(init, pos, ori))
 
     print('cartesian_velocity_control start!')
