@@ -51,7 +51,7 @@
                                 <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="wrist3" />
                                 <geom size="0.005 0.005 0.005" pos="0 0.0723 0" quat="0.707107 0 0 0.707107" type="box" />
                                 <site name="ee" pos="0 0 0" rgba="1 0 0 1" size="0.01" type="sphere"/>
-                                <body name="ee_link" pos="0 0.0823 0">
+                                <body name="ee_link" pos="0 0.0823 0" quat="0.707107 0 0 0.707107">
                                     <inertial pos="-0.01 0 0" mass="0.001" diaginertia="1.66667e-08 1.66667e-08 1.66667e-08" />
                                     <geom size="0.005 0.005 0.005" pos="-0.005 0 0" type="box" />
                                 </body>
