@@ -1,8 +1,12 @@
+'''
+包含功能：
+加载xml文件，关节初始化，正运动学，逆运动学，关节速度控制，笛卡尔速度控制
+'''
+
 import mujoco_py as mp
 import numpy as np
 import ikfastpy
 import utils
-from scipy.spatial.transform import Rotation as R
 import time
 
 def get_jacobian():
@@ -72,22 +76,6 @@ def inverse_kinematics(init, pos, ori):
             min_norm = norm
     return res
 
-def world2base_link():
-    pos = [-0.250, -0.000, 1.650]
-    ori = [-0.354, 0.854, 0.146, -0.354]    # in RPY (degree) [144.736, -30.000, -125.264], in RPY (radian) [2.526, -0.524, -2.186]
-    return pos, ori
-
-def quat2R(quat):
-    Rm = R.from_quat(quat)
-    rotation_matrix = Rm.as_matrix()
-    return rotation_matrix
-
-def inverse_pose(pos, ori):
-    rotation_matrix = quat2R(ori)
-    inverse_rotation = np.transpose(rotation_matrix)
-    inverse_translation = -np.dot(inverse_rotation, pos)
-    return inverse_translation, inverse_rotation
-
 # def jonit_position_control(step_nums, joint_target_pos):
 #     for i in range(step_nums):
 #         coriolis_gravity = get_coriolis_gravity()
@@ -108,7 +96,7 @@ if __name__ == '__main__':
     print('joint value init:', joint_value)
 
     print('forward kenematic!')
-    pos, ori = forward_kinematics('ee_link')
+    pos, ori = forward_kinematics('ee_link')    # end effector is ee_link
     print('pos:', pos)
     print('ori:', ori)
 
