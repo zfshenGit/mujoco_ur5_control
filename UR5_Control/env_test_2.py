@@ -76,6 +76,37 @@ def inverse_kinematics(init, pos, ori):
             min_norm = norm
     return res
 
+def admittance_control():
+    BF_Train = np.array([10.0, 10.0])
+    BT_Train = np.array([1.0, 1.0])
+    MF = np.array([[5.0, 0.0, 0.0], [0.0, 5.0, 0.0], [0.0, 0.0, 5.0]])
+    BF = np.array([[BF_Train[0], 0.0, 0.0], [0.0, BF_Train[1], 0.0], [0.0, 0.0, 1000.]])
+    MT = np.array([[0.2, 0.0, 0.0], [0.0, 0.2, 0.0], [0.0, 0.0, 0.2]]) 
+    BT = np.array([[BT_Train[0], 0.0, 0.0], [0.0, BT_Train[1], 0.0], [0.0, 0.0, 10.]])
+
+    c_Force_Target = np.array([[0.0, 0.0, 10.0]]).transpose()
+    c_Torque_Target = np.array([[0.0, 0.0, 0.0]]).transpose()
+
+    # force_torque_read = p.getJointState(self.pandaId,self.ftSensorJointIndex)[2]
+    # cur_C_Force = np.array([force_torque_read[0:3]]).transpose()
+    # cur_C_Torque = np.array([force_torque_read[3:6]]).transpose()
+
+    # rotate_angle = p.getLinkState(self.pandaId, self.peg_link)[1]
+    # r_m_f = p.getMatrixFromQuaternion(rotate_angle)
+    # rotate_matrix = np.array([[r_m_f[0],r_m_f[1],r_m_f[2]], [r_m_f[3],r_m_f[4],r_m_f[5]], [r_m_f[6],r_m_f[7],r_m_f[8]]])
+    # #这里可能需要修改
+    # transfom_matrix = np.array([[1,0,0],[0,-1,0],[0,0,-1]])
+    # rotate_matrix = np.matmul(rotate_matrix, transfom_matrix)
+
+    # force_temp = cur_C_Force
+
+    # #注释1 这里可能是一个问题 力的坐标系问题,大问题应该也没有
+    # cur_C_Force = np.matmul(rotate_matrix, cur_C_Force)
+    # cur_C_Torque = np.matmul(rotate_matrix, cur_C_Torque)
+
+    # error_force = c_Force_Target - cur_C_Force
+    # error_torque = c_Torque_Target - cur_C_Torque
+
 # def jonit_position_control(step_nums, joint_target_pos):
 #     for i in range(step_nums):
 #         coriolis_gravity = get_coriolis_gravity()
@@ -109,11 +140,11 @@ if __name__ == '__main__':
     print('inverse pos:', inverse)
     print('cost time:', end - start)
 
-    print('cartesian_velocity_control start!')
-    target_vel = np.array([0.0, 0.0, 0.0, 0.0, 0.1, 0.0])
-    cartesian_velocity_control(2000, target_vel)
+    # print('cartesian_velocity_control start!')
+    # target_vel = np.array([0.0, 0.0, 0.0, 0.0, 0.1, 0.0])
+    # cartesian_velocity_control(2000, target_vel)
 
-    print('joint_velocity_control start!')
-    target_vel = np.array([0.1, 0.0, 0.0, 0.0, 0.0, 0.0])
-    joint_velocity_control(2000, target_vel)
+    # print('joint_velocity_control start!')
+    # target_vel = np.array([0.1, 0.0, 0.0, 0.0, 0.0, 0.0])
+    # joint_velocity_control(2000, target_vel)
     
