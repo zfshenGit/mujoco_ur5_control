@@ -14,7 +14,8 @@ setup(
     py_modules=['mujoco_ur5'],
     version=__version__,
     install_requires=[
-        'mujoco_py==2.1.2.14',
+	'Cython==3.0.0a10',
+        'mujoco_py==2.0.2.4',
         'simple_pid',
         'matplotlib==3.3.4',
 		'termcolor',
