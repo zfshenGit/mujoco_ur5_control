@@ -1,3 +1,4 @@
+Cython==3.0.0a10
 mujoco_py==2.0.2.4
 simple_pid
 matplotlib==3.3.4
