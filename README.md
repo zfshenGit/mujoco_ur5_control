@@ -92,4 +92,8 @@ pip install numpy
 # mujoco_py通过清华源安装命令如下
 pip install mujoco_py -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+如果遇到Cython.Compiler.Errors.CompileError，通过下面命令解决
 
+```commandline
+pip install Cython==3.0.0a10
+```
